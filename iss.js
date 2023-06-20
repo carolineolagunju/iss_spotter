@@ -69,6 +69,16 @@ const fetchISSFlyOverTimes = function(coords, callback) {
 };
 
 
+const printPassTimes = function(passTimes) {
+  for (const pass of passTimes) {
+    const datetime = new Date(0);
+    datetime.setUTCSeconds(pass.risetime);
+    const duration = pass.duration;
+    console.log(`Next pass at ${datetime} for ${duration} seconds!`);
+  }
+};
+
+
 
 const nextISSTimesForMyLocation = function(callback) {
   fetchMyIP((error, ip) => {
@@ -81,15 +91,6 @@ const nextISSTimesForMyLocation = function(callback) {
         if (error) return callback(error, null);
 
         callback(null, passTimes);
-
-        const printPassTimes = function(passTimes) {
-          for (const pass of passTimes) {
-            const datetime = new Date(0);
-            datetime.setUTCSeconds(pass.risetime);
-            const duration = pass.duration;
-            console.log(`Next pass at ${datetime} for ${duration} seconds!`);
-          }
-        };
         printPassTimes(passTimes);
       });
     });
@@ -98,4 +99,4 @@ const nextISSTimesForMyLocation = function(callback) {
 
 
 
-module.exports = {nextISSTimesForMyLocation};
+module.exports = {nextISSTimesForMyLocation, printPassTimes};
