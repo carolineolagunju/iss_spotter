@@ -1,5 +1,6 @@
 const {nextISSTimesForMyLocation} = require('./iss');
 
+// Test
 // fetchMyIP((error, ip) => {
 //   if (error) {
 //     console.log(`It didn't work!` , error);
@@ -10,6 +11,7 @@ const {nextISSTimesForMyLocation} = require('./iss');
 // });
 
 
+// Test
 // fetchCoordsByIp('68.144.118.188', (error, coordinates) => {
 //   if (error) {
 //     console.log(`It didn't work!` , error);
@@ -20,6 +22,8 @@ const {nextISSTimesForMyLocation} = require('./iss');
 // });
 
 
+
+// Test
 // const coordinates = {
 //   latitude: '-80',
 //   longitude: '-23'
